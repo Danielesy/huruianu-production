@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Huruianu Production</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/about.css">
+
+</head>
+
+<script>
+  // Override backstage imgs with team photos for this page
+  window.addEventListener('DOMContentLoaded', () => {
+    const teamImgs = Array.from(
+      document.querySelectorAll('.team-photo img')
+    ).map(img => ({ src: img.src, alt: img.alt }));
+
+    document.querySelectorAll('.team-photo').forEach((item, index) => {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', () => openLightbox(index));
+    });
+
+    // Override the backstageImgs that main.js set up
+    // by redefining changePhoto and openLightbox for this page
+    let current = 0;
+
+    window.openLightbox = function(index) {
+      current = index;
+      document.getElementById('lightboxImg').src = teamImgs[index].src;
+      document.getElementById('lightboxImg').alt = teamImgs[index].alt;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.changePhoto = function(dir) {
+      current = (current + dir + teamImgs.length) % teamImgs.length;
+      document.getElementById('lightboxImg').src = teamImgs[current].src;
+      document.getElementById('lightboxImg').alt = teamImgs[current].alt;
+    };
+  });
+</script>
+
+<body>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+        <span class="lightbox-close" onclick="closeLightbox()">&#215;</span>
+        <img id="lightboxImg" src="" alt="Team member">
+        <div class="lightbox-nav">
+            <button onclick="changePhoto(-1)">&#8592; Prev</button>
+            <button onclick="changePhoto(1)">Next &#8594;</button>
+        </div>
+    </div>
+
+    <header id="mainHeader">
+        <div class="brand"><a href="index.html">Huruianu Production</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="help.html">Help</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <div class="nav-drawer" id="navDrawer">
+        <a href="index.html" onclick="closeDrawer()">Home</a>
+        <a href="about.html" onclick="closeDrawer()">About</a>
+        <a href="help.html" onclick="closeDrawer()">Help</a>
+        <a href="contact.html" onclick="closeDrawer()">Contact</a>
+    </div>
+
+    <!-- ══ HERO ══ -->
+    <div class="about-hero">
+        <div class="about-hero-content">
+            <div class="about-eyebrow">Our Story</div>
+            <h1>From the<br><span> heart of Europe.</span></h1>
+        </div>
+    </div>
+
+    <!-- ══ STORY ══ -->
+    <section class="story">
+        <div class="story-grid">
+
+            <!-- Sidebar -->
+            <div class="story-sidebar fade-up">
+                <div class="sidebar-label">Timeline</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="t-year">2023</div>
+                        <div class="t-desc">A 2-minute film experiment that changed everything</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="t-year">2024</div>
+                        <div class="t-desc">Fulla Net — first short film, 25 minutes</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="t-year">2025</div>
+                        <div class="t-desc">Music videos, university projects & gear expansion</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="t-year">2026</div>
+                        <div class="t-desc">Mihail Bogomutov — released 15 January 2026</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapters -->
+            <div class="story-body">
+
+                <div class="chapter fade-up">
+                    <div class="chapter-num">01 — The beginning</div>
+                    <h2>A two-minute idea</h2>
+                    <p>It started as a dare. In <strong>2023</strong>, a group of students from the Republic of Moldova
+                        sat down with a rough idea, a minimal setup, and zero expectations — just the shared feeling
+                        that making something real would be worth a try.</p>
+                    <div class="pull-quote">"We thought we'd film for an afternoon. We ended up finding our calling."
+                    </div>
+                    <p>The result was a <strong>2-minute short</strong> with a proper scenario and real actors. The
+                        moment playback ended, something clicked. The energy on set, the storytelling, the craft of it —
+                        it felt like something none of them were ready to walk away from.</p>
+                </div>
+
+                <div class="chapter fade-up">
+                    <div class="chapter-num">02 — First film</div>
+                    <h2>From a spark to a full feature</h2>
+                    <p>What followed was months of writing. A full screenplay took shape — bigger characters, a longer
+                        arc, a real story to tell. By <strong>2024</strong>, Huruianu Production had its first short
+                        film: <strong>Fulla Net</strong>, running 25 minutes.</p>
+                    <p>The production pushed the team to invest in their craft. <strong>New cameras, lighting rigs and
+                            audio gear</strong> were brought in — tools that didn't just improve the image, but expanded
+                        what was possible to imagine. Each piece of kit was a commitment to the next project, and the
+                        one after that.</p>
+                </div>
+
+                <div class="chapter fade-up">
+                    <div class="chapter-num">03 — Building momentum</div>
+                    <h2>Keeping the fire going</h2>
+                    <p>Between major productions, the team stayed sharp with <strong>music videos, creative commissions
+                            and university projects</strong>. Each one was a proving ground — a chance to try new
+                        techniques, build relationships and refine the visual language that makes Huruianu Production
+                        recognisable.</p>
+                    <p>The smaller projects weren't filler. They were the training ground that made the next big thing
+                        possible.</p>
+                </div>
+
+                <div class="chapter fade-up">
+                    <div class="chapter-num">04 — Latest work</div>
+                    <h2>Mihail Bogomutov</h2>
+                    <p>On <strong>15 January 2026</strong>, Huruianu Production released its most ambitious work to
+                        date: the short film <strong>Mihail Bogomutov</strong>. A project years in the making, brought
+                        to life by a team that had grown — technically, creatively, and as filmmakers — through every
+                        frame shot before it.</p>
+                    <p>The story doesn't stop here. It's just getting started.</p>
+                </div>
+
+                <div class="stats-row fade-up">
+                    <div class="stat-card">
+                        <strong>3+</strong>
+                        <span>Years active</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>2</strong>
+                        <span>Short films</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>10+</strong>
+                        <span>Projects</span>
+                    </div>
+                    <!-- <div class="stat-card">
+                        <strong>🇲🇩</strong>
+                        <span>Republic of Moldova</span>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ DIVIDER ══ -->
+    <div class="sec-divider">
+        <span>The crew</span>
+    </div>
+
+    <!-- ══ TEAM ══ -->
+    <section class="team">
+        <div class="team-header fade-up">
+            <div class="about-eyebrow">Behind the camera</div>
+            <h2>The people who make it happen</h2>
+        </div>
+
+        <div class="team-grid">
+
+            <div class="team-card fade-up">
+                <div class="team-photo" onclick="openLightbox(0)">
+                    <img src="images/team/member1.jpg" alt="Daniel Huruianu">
+                </div>
+                <div class="team-name">Daniel Huruianu</div>
+                <div class="team-role">General Producer, sometimes actor</div>
+            </div>
+
+            <div class="team-card fade-up" onclick="openLightbox(1)">
+                <div class="team-photo">
+                    <img src="images/team/member2.jpg" alt="Rostislav Dudun">
+                </div>
+                <div class="team-name">Rostislav Dudun</div>
+                <div class="team-role">Director of Photography, Screenwriter</div>
+            </div>
+
+            <div class="team-card fade-up" onclick="openLightbox(2)">
+                <div class="team-photo">
+                    <img src="images/team/member6.jpg" alt="Aleksandr Sherbacov">
+                </div>
+                <div class="team-name">Aleksandr Sherbacov</div>
+                <div class="team-role">Screenwriter, Actor</div>
+            </div>
+
+
+            <div class="team-card fade-up" onclick="openLightbox(3)">
+                <div class="team-photo">
+                    <img src="images/team/member7.jpg" alt="Angelo Cojocari">
+                </div>
+                <div class="team-name">Daniil Malcov</div>
+                <div class="team-role">Cinematographer</div>
+            </div>
+
+
+            <div class="team-card fade-up" onclick="openLightbox(4)">
+                <div class="team-photo">
+                    <img src="images/team/member4.jpg" alt="Angelo Cojocari">
+                </div>
+                <div class="team-name">Angelo Cojocari</div>
+                <div class="team-role">Screenwriter</div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="copyright">
+            <p>Video materials are copyright reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

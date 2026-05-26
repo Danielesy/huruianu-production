@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Huruianu Production</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/contact.css">
+
+</head>
+<script src="main.js"></script>
+
+<body>
+
+  <header id="mainHeader">
+    <div class="brand"><a href="index.html">Huruianu Production</a></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="help.html">Help</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="nav-drawer" id="navDrawer">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="about.html" onclick="closeDrawer()">About</a>
+    <a href="help.html" onclick="closeDrawer()">Help</a>
+    <a href="contact.html" onclick="closeDrawer()">Contact</a>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <div class="contact-hero">
+    <div class="contact-hero-content">
+      <div class="contact-eyebrow">Get in touch</div>
+      <h1>Let's make<br>something <span>great.</span></h1>
+    </div>
+  </div>
+
+  <!-- ══ BODY ══ -->
+  <div class="contact-body">
+
+    <!-- Left column -->
+    <div class="contact-info">
+
+      <p class="contact-intro">
+        Whether you have a <strong>project idea</strong>, want to collaborate, or just want to say hello — we'd love to
+        hear from you. Reach out directly or send a message using the form.
+      </p>
+
+      <div class="contact-cards">
+
+        <a class="contact-card" href="tel:+37368231449">
+          <div class="contact-card-icon">☎</div>
+          <div class="contact-card-body">
+            <div class="contact-card-label">Phone</div>
+            <div class="contact-card-value">+373 68 231 449</div>
+          </div>
+        </a>
+
+        <a class="contact-card" href="mailto:huruianudaniel@gmail.com">
+          <div class="contact-card-icon">✉</div>
+          <div class="contact-card-body">
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-value">huruianudaniel@gmail.com</div>
+          </div>
+        </a>
+
+        <a class="contact-card" href="https://www.youtube.com/@danielhuruianu" target="_blank" rel="noopener">
+          <div class="contact-card-icon">▶</div>
+          <div class="contact-card-body">
+            <div class="contact-card-label">YouTube</div>
+            <div class="contact-card-value">@danielhuruianu</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Right column: form -->
+    <div class="contact-form-wrap">
+      <div class="form-heading">Send a message</div>
+
+      <div class="contact-form" id="contactForm">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="femail">Email</label>
+            <input type="email" id="femail" placeholder="your@email.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="fsubject">Subject</label>
+          <select id="fsubject">
+            <option value="" disabled selected>Select a topic</option>
+            <option>Film / Video Production</option>
+            <option>Music Video</option>
+            <option>Collaboration</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fmessage">Message</label>
+          <textarea id="fmessage" placeholder="Tell us about your project or idea..."></textarea>
+        </div>
+
+        <div class="form-error" id="formError"></div>
+
+        <button class="form-submit" onclick="submitForm()">
+          Send message &#8594;
+        </button>
+
+        <div class="form-success" id="formSuccess">
+          <span class="form-success-icon">✓</span>
+          Message sent! We'll get back to you soon.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="copyright">
+      <p>Video materials are copyright reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function submitForm() {
+      // Preluăm valorile introduse
+      const name = document.getElementById('fname').value.trim();
+      const email = document.getElementById('femail').value.trim();
+      const subject = document.getElementById('fsubject').value;
+      const message = document.getElementById('fmessage').value.trim();
+
+      const errorElement = document.getElementById('formError');
+      const successElement = document.getElementById('formSuccess');
+
+      // Resetăm stările anterioare (erori și succes)
+      errorElement.style.display = 'none';
+      errorElement.innerText = '';
+      successElement.classList.remove('show');
+
+      // Resetăm culorile chenarelor
+      ['fname', 'femail', 'fsubject', 'fmessage'].forEach(id => {
+        document.getElementById(id).style.borderColor = 'var(--border)';
+      });
+
+      // ═══ VALIDAREA 1: Verificare câmpuri goale ═══
+      if (!name || !email || !subject || !message) {
+        errorElement.innerText = 'All fields are required! Please fill them out.';
+        errorElement.style.display = 'block';
+
+        // Înroșim doar câmpurile care sunt goale
+        [
+          { id: 'fname', val: name },
+          { id: 'femail', val: email },
+          { id: 'fsubject', val: subject },
+          { id: 'fmessage', val: message }
+        ].forEach(({ id, val }) => {
+          if (!val) {
+            document.getElementById(id).style.borderColor = 'rgba(255, 80, 80, 0.8)';
+          }
+        });
+        return; // Oprim trimiterea
+      }
+
+      // ═══ VALIDAREA 2: Formatul corect de Email (Expresie Regulată) ═══
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        errorElement.innerText = 'The email address is invalid! Make sure it includes an "@" and a valid domain (e.g., name@email.com).';
+        errorElement.style.display = 'block';
+        document.getElementById('femail').style.borderColor = 'rgba(255, 80, 80, 0.8)';
+        return; // Oprim trimiterea
+      }
+
+      // ═══ VALIDAREA 3: Lungimea minimă a mesajului (pentru a evita mesaje spam/inutile) ═══
+      if (message.length < 10) {
+        errorElement.innerText = 'Your message is too short! Please provide a few more details (minimum 10 characters).';
+        errorElement.style.display = 'block';
+        document.getElementById('fmessage').style.borderColor = 'rgba(255, 80, 80, 0.8)';
+        return; // Oprim trimiterea
+      }
+
+      // Dacă toate cele 3 validări au trecut cu succes:
+      successElement.classList.add('show');
+
+      // Golim câmpurile formularului
+      document.getElementById('fname').value = '';
+      document.getElementById('femail').value = '';
+      document.getElementById('fsubject').value = '';
+      document.getElementById('fmessage').value = '';
+    }
+  </script>
+
+</body>
+
+</html>

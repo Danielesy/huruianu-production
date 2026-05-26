@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help — Huruianu Production</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/help.css">
+
+</head>
+<script src="main.js"></script>
+
+<body>
+
+  <header id="mainHeader">
+    <div class="brand"><a href="index.html">Huruianu Production</a></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="help.html">Help</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="nav-drawer" id="navDrawer">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="about.html" onclick="closeDrawer()">About</a>
+    <a href="help.html" onclick="closeDrawer()">Help</a>
+    <a href="contact.html" onclick="closeDrawer()">Contact</a>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <div class="help-hero">
+    <div class="help-hero-content">
+      <div class="help-eyebrow">Support</div>
+      <h1>How can we<br><span>help you?</span></h1>
+    </div>
+  </div>
+
+  <!-- ══════════════ FAQ ══════════════ -->
+  <section class="help-section">
+    <div class="section-eyebrow fade-up">Frequently asked questions</div>
+    <h2 class="section-title fade-up">FAQ</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What kind of projects does Huruianu Production make?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            We specialise in <strong>short films, music videos</strong> and creative video content. Since 2023 we have produced two short films — <em>Fulla Net</em> (2024) and <em>Mihail Bogomutov</em> (2026) — along with several music videos and commissioned projects. We work with real scenarios, actors and professional gear.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Where can I watch your films and videos?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Most of our projects are published on our YouTube channel <a href="https://www.youtube.com/@danielhuruianu" 
+            target="_blank" rel="noopener">@danielhuruianu</a>. You can also find direct links to each 
+            project on the <a href="index.html">Home</a> page — just click any project card to open it on YouTube.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I collaborate with or hire Huruianu Production?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes! We are open to collaborations, commissions and new project ideas. Head over to the <a href="contact.html">Contact</a> page, send us a message with your idea and we'll get back to you as soon as possible. You can also reach us directly by phone or email.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Where is Huruianu Production based?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            We are a student production team based in the <strong>Republic of Moldova</strong>. The team was formed in 2023 and has been growing ever since. You can read the full story on our <a href="about.html">About</a> page.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What equipment do you use?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Since our first project in 2023 we have continuously invested in our gear. Our kit now includes professional cameras, lighting rigs and audio equipment that allow us to deliver cinematic quality for both large and small productions.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I contact you for urgent matters?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            For urgent matters, call us directly at <a href="tel:+37368231449">+373 68 231 449</a> or email <a href="mailto:huruianudaniel@gmail.com">huruianudaniel@gmail.com</a>. We typically respond within 24 hours.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="sec-divider"><span>How it works</span></div>
+
+  <!-- ══════════════ HOW IT WORKS ══════════════ -->
+  <section class="help-section">
+    <div class="section-eyebrow fade-up">Working with us</div>
+    <h2 class="section-title fade-up">From idea to screen</h2>
+
+    <div class="steps-grid">
+
+      <div class="step-card fade-up">
+        <div class="step-number">01</div>
+        <div class="step-title">Reach out</div>
+        <div class="step-desc">Contact us via the <a href="contact.html" style="color:var(--gold);text-decoration:none;">Contact page</a>, email or phone. Tell us about your idea, project type and timeline — the more detail the better.</div>
+      </div>
+
+      <div class="step-card fade-up">
+        <div class="step-number">02</div>
+        <div class="step-title">We discuss</div>
+        <div class="step-desc">We'll schedule a call or meeting to understand your vision, goals and budget. Together we shape the concept and define what the final result should look and feel like.</div>
+      </div>
+
+      <div class="step-card fade-up">
+        <div class="step-number">03</div>
+        <div class="step-title">We produce</div>
+        <div class="step-desc">Our team handles everything — scripting, casting, shooting and post-production. We keep you updated throughout the process so there are no surprises.</div>
+      </div>
+
+      <div class="step-card fade-up">
+        <div class="step-number">04</div>
+        <div class="step-title">You receive</div>
+        <div class="step-desc">The final video is delivered in your preferred format and published wherever you need it. We're available for revisions to make sure you're fully satisfied.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="sec-divider"><span>Site guide</span></div>
+
+  <!-- ══════════════ SITE GUIDE ══════════════ -->
+  <section class="help-section">
+    <div class="section-eyebrow fade-up">Navigating the site</div>
+    <h2 class="section-title fade-up">How to use this website</h2>
+
+    <div class="guide-grid">
+
+      <div class="guide-card fade-up">
+        <div class="guide-icon">🏠</div>
+        <div class="guide-card-body">
+          <div class="guide-card-title">Home page</div>
+          <div class="guide-card-desc">The <a href="index.html">Home</a> page is your starting point. Scroll past the hero video to browse our featured projects — hover over any card to see details, then click to watch it on YouTube. Continue scrolling to explore our backstage gallery.</div>
+        </div>
+      </div>
+
+      <div class="guide-card fade-up">
+        <div class="guide-icon">🖼</div>
+        <div class="guide-card-body">
+          <div class="guide-card-title">Backstage gallery</div>
+          <div class="guide-card-desc">On the Home page, scroll down to the Backstage section. Click any photo to open it in fullscreen. Use the <strong>Prev / Next</strong> buttons or your keyboard <strong>← →</strong> arrow keys to navigate between photos. Press <strong>Esc</strong> to close.</div>
+        </div>
+      </div>
+
+      <div class="guide-card fade-up">
+        <div class="guide-icon">👥</div>
+        <div class="guide-card-body">
+          <div class="guide-card-title">About page</div>
+          <div class="guide-card-desc">The <a href="about.html">About</a> page tells the story of Huruianu Production from 2023 to today, with a timeline on the left. Scroll down to meet the crew — click any team photo to view it fullscreen.</div>
+        </div>
+      </div>
+
+      <div class="guide-card fade-up">
+        <div class="guide-icon">✉</div>
+        <div class="guide-card-body">
+          <div class="guide-card-title">Contact page</div>
+          <div class="guide-card-desc">The <a href="contact.html">Contact</a> page lets you reach us directly — click the phone or email cards to open your dialer or mail client instantly. You can also fill in the message form to send us a project inquiry.</div>
+        </div>
+      </div>
+
+      <div class="guide-card fade-up">
+        <div class="guide-icon">📱</div>
+        <div class="guide-card-body">
+          <div class="guide-card-title">Mobile navigation</div>
+          <div class="guide-card-desc">On phones and tablets the top navigation collapses into a <strong>☰ menu button</strong> in the top right corner. Tap it to open the full-screen menu, tap any link to navigate, or tap the <strong>✕</strong> to close it.</div>
+        </div>
+      </div>
+
+      <div class="guide-card fade-up">
+        <div class="guide-icon">▶</div>
+        <div class="guide-card-body">
+          <div class="guide-card-title">Watching our films</div>
+          <div class="guide-card-desc">All project cards on the Home page link directly to <strong>YouTube</strong>. They open in a new tab so you never lose your place on the site. You can also visit our channel directly at <a href="https://www.youtube.com/@danielhuruianu" target="_blank" rel="noopener">@danielhuruianu</a>.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <div class="help-cta">
+    <div class="help-cta-inner fade-up">
+      <div class="help-cta-text">
+        <h3>Still have questions?</h3>
+        <p>Can't find what you're looking for? Get in touch directly — we're happy to help with anything.</p>
+      </div>
+      <a href="contact.html" class="help-cta-btn">Contact us &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="copyright">
+      <p>Video materials are copyright reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+
+      // Close all open items
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+
+      // Toggle clicked one
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Fade-in on scroll
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => fadeObserver.observe(el));
+  </script>
+
+</body>
+</html>

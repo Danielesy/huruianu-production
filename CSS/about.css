@@ -1,0 +1,399 @@
+/* ══════════════ ABOUT HERO ══════════════ */
+    .about-hero {
+      padding-top: 70px; /* header offset */
+      min-height: 40vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 60px;
+      padding-left: 50px;
+      padding-right: 50px;
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle gold glow top-right */
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(ellipse at 80% 30%, rgba(255,187,0,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .about-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .about-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      line-height: 1.05;
+    }
+
+    .about-hero h1 span {
+      color: var(--gold);
+    }
+
+    /* ══════════════ STORY SECTION ══════════════ */
+    .story {
+      padding: 80px 50px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ── Timeline sidebar ── */
+    .story-sidebar {
+      position: sticky;
+      top: 90px;
+    }
+
+    .sidebar-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .t-year {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      min-width: 52px;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .timeline-item:hover .t-year {
+      color: var(--gold);
+    }
+
+    .t-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+      padding-top: 2px;
+    }
+
+    /* ── Story chapters ── */
+    .story-body {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    .chapter {
+      position: relative;
+      padding-top: 8px;
+    }
+
+    .chapter-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chapter-num::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .chapter h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+    }
+
+    .chapter p {
+      font-size: 0.93rem;
+      line-height: 1.9;
+      color: var(--text-muted);
+    }
+
+    .chapter p + p {
+      margin-top: 14px;
+    }
+
+    .chapter p strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Pull quote — same dark card style as project-info */
+    .pull-quote {
+      margin: 28px 0;
+      padding: 24px 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--gold);
+      border-radius: 4px;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+
+    /* Stats row — pill style matching project cards */
+    .stats-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .stat-card {
+      flex: 1 1 100px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-card span {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ══════════════ SECTION DIVIDER ══════════════ */
+    .sec-divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 50px;
+    }
+
+    .sec-divider::before,
+    .sec-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .sec-divider span {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    /* ══════════════ TEAM SECTION ══════════════ */
+    .team {
+      padding: 80px 50px;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .team-header {
+      margin-bottom: 56px;
+    }
+
+    .team-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+
+    /* Team card — same pattern as .project-card */
+    .team-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      aspect-ratio: 3 / 4;
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .team-card:hover .team-photo img {
+      transform: scale(1.08);
+      filter: grayscale(0%) brightness(1);
+    }
+
+    /* Gold underline sweep — same as nav a::after */
+    .team-photo::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .team-card:hover .team-photo::after {
+      width: 100%;
+    }
+
+    .team-name {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .team-role {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ══════════════ RESPONSIVE ══════════════ */
+    @media (max-width: 1000px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .story-sidebar {
+        position: static;
+      }
+
+      .timeline {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .timeline-item {
+        flex: 1 1 45%;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .about-hero {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-bottom: 48px;
+      }
+
+      .story,
+      .team {
+        padding: 56px 24px;
+      }
+
+      .sec-divider {
+        padding: 0 24px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }

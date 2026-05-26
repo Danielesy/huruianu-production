@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huruianu Production</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<script src="main.js"></script>
+
+
+<body>
+  <header id="mainHeader">
+    <div class="brand"><a href="index.html">Huruianu Production</a></div>
+
+    <!-- Desktop nav -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="help.html">Help</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile full-screen nav drawer -->
+  <div class="nav-drawer" id="navDrawer">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="about.html" onclick="closeDrawer()">About</a>
+    <a href="help.html" onclick="closeDrawer()">Help</a>
+    <a href="contact.html" onclick="closeDrawer()">Contact</a>
+  </div>
+
+  <main>
+    <video class="video-bg" autoplay muted loop playsinline>
+      <source src="images/home.mp4" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+    <div class="overlay"></div>
+
+    <section class="hero">
+      <h1>Huruianu Production</h1>
+      <p>Creative video content for digital storytelling. Explore featured YouTube projects below to discover the style,
+        energy,
+        and cinematic vision of Huruianu Production.</p>
+    </section>
+  </main>
+
+  <!-- ══════════════ PROJECTS SECTION ══════════════ -->
+
+  <section class="projects">
+
+    <div class="projects-title-block fade-up">
+      <div class="projects-eyebrow">Our Work</div>
+      <h2>Featured Projects</h2>
+    </div>
+
+    
+
+
+    <article class="project-card fade-up">
+      <a href="https://youtu.be/BA1Qji7DANM?si=SvJVM2hd_d2ayc-e" target="_blank"
+        style="text-decoration: none; color: inherit;">
+
+        <img src="images/Trailer 111.jpg" alt="Film Mihail Bogomutov 2026">
+
+        <div class="project-info">
+          <h3>Mihail Bogomutov (Film 2026)</h3>
+          <p>Our last short film. A story about a poor student living in Chisinau</p>
+        </div>
+
+      </a>
+    </article>
+
+    <article class="project-card fade-up">
+
+      <a href="https://youtu.be/5wWn3LBNzzk?si=26cDzAR_-cXQdWNc" target="_blank"
+        style="text-decoration: none; color: inherit;">
+
+        <img src="images/imageKapets.jpg" alt="Project 1 thumbnail">
+
+        <div class="project-info">
+          <h3>Frumos - Kapets</h3>
+          <p>Dynamic music video production with cinematic editing designed for
+            YouTube audiences.</p>
+        </div>
+
+      </a>
+    </article>
+
+    <article class="project-card fade-up">
+      <a href="https://youtu.be/AukTtTVdsSM?si=DLv27f3UuB5fY3eM" target="_blank"
+        style="text-decoration: none; color: inherit;">
+
+        <img src="images/Full poster21.jpg" alt="Film Fulla Net 2024">
+
+        <div class="project-info">
+          <h3>Fulla Net (Film 2024)</h3>
+          <p>First project and first short film made by us. It is about fighting for an interesting page from an
+            artist's book</p>
+        </div>
+
+      </a>
+    </article>
+
+    <article class="project-card fade-up">
+      <a href="https://youtu.be/_KzqI-8Kmko?si=WvEnG1VZT6Z-zOKt" target="_blank"
+        style="text-decoration: none; color: inherit;">
+
+        <img src="images/project45.jpg" alt="pr4">
+
+        <div class="project-info">
+          <h3>History Project</h3>
+          <p>A project for school about the church</p>
+        </div>
+
+      </a>
+    </article>
+
+    <article class="project-card fade-up">
+      <a href="https://youtu.be/t10dxUnYdKo?si=1YemTaTZVIO5EUyw" target="_blank"
+        style="text-decoration: none; color: inherit;">
+
+        <img src="images/project6.jpg" alt="pr6">
+
+        <div class="project-info">
+          <h3>Daniel Huruianu - Faceit</h3>
+          <p>An another music video</p>
+        </div>
+
+      </a>
+    </article>
+
+
+    <article class="project-card fade-up">
+      <a href="https://youtu.be/hNZWacvkEKQ?si=JIoC3ykxRvkMm4O9" target="_blank"
+        style="text-decoration: none; color: inherit;">
+
+        <img src="images/project5.jpg" alt="pr5">
+
+        <div class="project-info">
+          <h3>Happy Birthday Ernest</h3>
+          <p>A video made for the boy named Ernest, for his birthday</p>
+        </div>
+
+      </a>
+    </article>
+
+
+
+  </section>
+
+  <!-- ══════════════ BACKSTAGE SECTION ══════════════ -->
+  <section class="backstage fade-up">
+    <div class="backstage-header">
+      <div class="projects-eyebrow">Behind the lens</div>
+      <h2>Backstage</h2>
+    </div>
+
+    <div class="backstage-grid" id="backstageGrid">
+
+
+      <div class="backstage-item fade-up" onclick="openLightbox(0)">
+        <img src="images/backstage/bs1.jpg" alt="Backstage photo 1">
+        <div class="caption">On set — Mihail Bogomutov</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(1)">
+        <img src="images/backstage/bs2.jpg" alt="Backstage photo 2">
+        <div class="caption">Behind the camera</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(2)">
+        <img src="images/backstage/bs3.jpg" alt="Backstage photo 3">
+        <div class="caption">Test Shot</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(3)">
+        <img src="images/backstage/bs4.jpg" alt="Backstage photo 4">
+        <div class="caption">Crew at work</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(4)">
+        <img src="images/backstage/bs5.jpg" alt="Backstage photo 5">
+        <div class="caption">On set — Fulla Net</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(5)">
+        <img src="images/backstage/bs6.jpg" alt="Backstage photo 6">
+        <div class="caption">Behind the Scenes — Fulla Net</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(6)">
+        <img src="images/backstage/bs7.jpg" alt="Backstage photo 7">
+        <div class="caption">Behind the Scenes — Fulla Net</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(7)">
+        <img src="images/backstage/bs8.jpg" alt="Backstage photo 8">
+        <div class="caption">Director's cut</div>
+      </div>
+
+      <!-- <div class="backstage-item fade-up" onclick="openLightbox(8)">
+        <img src="images/backstage/bs9.jpg" alt="Backstage photo 9">
+        <div class="caption">Film Mihail Bogomutov — set</div>
+      </div> -->
+
+      <div class="backstage-item fade-up" onclick="openLightbox(9)">
+        <img src="images/backstage/bs10.jpg" alt="Backstage photo 10">
+        <div class="caption">Post-production preview</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(10)">
+        <img src="images/backstage/bs16.jpg" alt="Backstage photo 11">
+        <div class="caption">Fulla Net 2024 — behind the scenes</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(11)">
+        <img src="images/backstage/bs12.jpg" alt="Backstage photo 12">
+        <div class="caption">Director's cut</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(12)">
+        <img src="images/backstage/bs13.jpg" alt="Backstage photo 13">
+        <div class="caption">Director's cut</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(13)">
+        <img src="images/backstage/bs14.jpg" alt="Backstage photo 14">
+        <div class="caption">Director's cut</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(14)">
+        <img src="images/backstage/bs15.jpg" alt="Backstage photo 15">
+        <div class="caption">Director's cut</div>
+      </div>
+
+      <div class="backstage-item fade-up" onclick="openLightbox(15)">
+        <img src="images/backstage/bs11.jpg" alt="Backstage photo 16">
+        <div class="caption">Director's cut</div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ══════════════ END BACKSTAGE ══════════════ -->
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+    <span class="lightbox-close" onclick="closeLightbox()">&#215;</span>
+    <img id="lightboxImg" src="" alt="Backstage photo">
+    <div class="lightbox-nav">
+      <button onclick="changePhoto(-1)">&#8592; Prev</button>
+      <button onclick="changePhoto(1)">Next &#8594;</button>
+    </div>
+  </div>
+
+
+  <footer>
+    <!-- <div class="socials">
+      <a href="#">YouTube</a>
+    </div> -->
+    <div class="copyright">
+      <p>Video materials are copyright reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
