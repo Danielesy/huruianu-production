@@ -98,22 +98,28 @@
 
     .timeline-item {
       display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      padding: 18px 0;
+      gap: 20px;
+      align-items: center;
+      padding: 20px 0;
       border-bottom: 1px solid var(--border);
-    }
-
-    .timeline-item:last-child {
-      border-bottom: none;
+      transition: background 0.2s;
     }
 
     .t-year {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--text-muted);
-      min-width: 52px;
+      min-width: 44px;
       letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .t-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+      font-weight: 500;
       transition: color 0.2s;
     }
 
@@ -121,12 +127,8 @@
       color: var(--gold);
     }
 
-    .t-desc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      letter-spacing: 0.03em;
-      padding-top: 2px;
+    .timeline-item:hover .t-desc {
+      color: var(--text-primary);
     }
 
     /* ── Story chapters ── */
