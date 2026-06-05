@@ -40,14 +40,30 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Lightbox ──
-  const backstageImgs = Array.from(
-    document.querySelectorAll('.backstage-item img')
-  ).map(img => ({ src: img.src, alt: img.alt }));
-
+  let backstageImgs = [];
   let currentPhoto = 0;
 
-  document.querySelectorAll('.backstage-item').forEach((item, index) => {
-    item.addEventListener('click', () => openLightbox(index));
+  document.querySelectorAll('.backstage-item').forEach((item) => {
+    item.addEventListener('click', () => {
+      
+      const sortedItems = Array.from(document.querySelectorAll('.backstage-item')).sort((a, b) => {
+        const rowDiff = a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+        
+        if (Math.abs(rowDiff) < 50) {
+          return a.getBoundingClientRect().left - b.getBoundingClientRect().left;
+        }
+        return rowDiff;
+      });
+
+      backstageImgs = sortedItems.map(el => {
+        const img = el.querySelector('img');
+        return { src: img.src, alt: img.alt };
+      });
+
+      const sortedIndex = sortedItems.indexOf(item);
+
+      openLightbox(sortedIndex);
+    });
   });
 
   function openLightbox(index) {
